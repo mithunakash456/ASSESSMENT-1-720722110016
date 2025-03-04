@@ -1,0 +1,22 @@
+class Main {
+    static String without_builtin(String x){
+            String substr=x.substring(0,4);
+            return substr;
+        }
+    static String string_builder(String x){
+        StringBuilder s=new StringBuilder(x);
+        String substr=s.substring(0,4);
+        return substr;
+    }
+    static String string_buffer(String x){
+        StringBuffer s=new StringBuffer(x);
+        String substr=s.substring(0,4);
+        return substr;
+    }
+    public static void main(String[] args) {
+        String a="classroom";
+        System.out.println(without_builtin(a));
+        System.out.println(string_builder(a));
+        System.out.println(string_buffer(a));
+    }
+}

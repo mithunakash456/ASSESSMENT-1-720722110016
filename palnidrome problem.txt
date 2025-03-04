@@ -1,0 +1,42 @@
+class Main {
+    static String without_builtin(String x){
+            String reverse="";
+            for(int i=x.length()-1;i>=0;i--){
+                reverse = reverse+x.charAt(i);
+            }
+            if(reverse.equals(x)){
+                return "Palindrome";
+            }
+            else{
+                return "Not Palindrome";
+            }
+        }
+    static String string_builder(String x){
+        StringBuilder s=new StringBuilder(x);
+        s.reverse();
+        String reversetostr=s.toString();
+        if(x.equals(reversetostr)){
+            return "Palindrome";
+        }
+        else{
+            return "Not Palindrome";
+        }
+    }
+    static String string_buffer(String x){
+        StringBuffer s=new StringBuffer(x);
+        s.reverse();
+        String reversetostr=s.toString();
+        if(x.equals(reversetostr)){
+            return "Palindrome";
+        }
+        else{
+            return "Not Palindrome";
+        }
+    }
+    public static void main(String[] args) {
+        String a="malayalam";
+        System.out.println(without_builtin(a));
+        System.out.println(string_builder(a));
+        System.out.println(string_buffer(a));
+    }
+}
