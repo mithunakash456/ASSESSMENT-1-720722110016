@@ -1,0 +1,30 @@
+Swap ith bit and jth bit 32
+class Main {
+    public static void main(String[] args) {
+        int a = 12; // Number to manipulate
+        int i = 4; // Position 1 (1-based index)
+        int j = 20; // Position 2 (1-based index)
+        
+        // Convert to 32-bit binary representation
+        String binary = String.format("%32s", Integer.toBinaryString(a)).replace(' ', '0');
+        System.out.println("Before swapping: " + binary);
+        
+        // Convert to 0-based index
+        int i_bit = i - 1;
+        int j_bit = j - 1;
+        
+        // Get the bits at positions i and j
+        int bit1 = (a >> i_bit) & 1;
+        int bit2 = (a >> j_bit) & 1;
+        
+        // If bits are different, swap them
+        if (bit1 != bit2) {
+            a = a ^ (1 << i_bit);
+            a = a ^ (1 << j_bit);
+        }
+        
+        // Convert to binary after swapping
+        binary = String.format("%32s", Integer.toBinaryString(a)).replace(' ', '0');
+        System.out.println("After swapping:  " + binary);
+    }
+}

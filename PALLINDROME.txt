@@ -1,0 +1,19 @@
+ASSESMENT 1
+class Solution {
+    public boolean isPalindrome(int x) {
+        int num=x;
+        int rev=0;
+        int curr=0;
+        while(x>0){
+            curr=x%10;
+            rev=rev*10+curr;
+            x=x/10;
+        }
+        if(num==rev){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
